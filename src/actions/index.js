@@ -6,13 +6,13 @@ export const ERROR = "ERROR";
 export const SUCCESS = "SUCCESS";
 
 export const fetchSmurfs = () => (dispatch) => {
-    dispatch(isLoading())
+    dispatch(isLoading());
     axios.get(`http://localhost:3333/smurfs`)
-        .then(res => {
+        .then((res) => {
             console.log(res); 
             dispatch(success(res.data))
         })
-        .catch(err => {
+        .catch((err) => {
             console.log({ err }); 
             dispatch(error(err.response.data.error))
         })
