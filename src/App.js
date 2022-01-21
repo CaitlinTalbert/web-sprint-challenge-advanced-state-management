@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -10,17 +10,13 @@ import { fetchSmurfs } from "./actions";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-function App(props) {
+function App() {
   
-  useEffect(() => {
-    props.fetchSmurfs();
-  }, []);
-
 
   return (
     <div className="App">
       <Header />
-
+      
       <main>
         <SmurfList/>
         <AddForm/>

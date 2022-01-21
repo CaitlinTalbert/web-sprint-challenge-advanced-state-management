@@ -13,7 +13,8 @@ export const fetchSmurfs = () => (dispatch) => {
             dispatch(success(res.data))
         })
         .catch(err => {
-            console.log(err)
+            console.log({ err }); 
+            dispatch(error(err.response.data.error))
         })
 };
 
@@ -24,6 +25,10 @@ const isLoading = () => {
 const success = (data) => {
     return { type: SUCCESS, payload: data};
 };
+
+const error = (message) => {
+    return {type: ERROR, payload: message}
+}
 
 
 
